@@ -1,0 +1,13 @@
+driverId,relationId,type
+kevin-magnussen,jan-magnussen,PARENT
+wilson-fittipaldi,max-papis,SIBLINGS_CHILD_IN_LAW
+markus-winkelhock,joachim-winkelhock,PARENTS_SIBLING
+jolyon-palmer,jonathan-palmer,PARENT
+jonathan-palmer,jolyon-palmer,CHILD
+teo-fabi,corrado-fabi,SIBLING
+jim-rathmann,dick-rathmann,SIBLING
+paul-russo,eddie-russo,SIBLINGS_CHILD
+ricardo-rodriguez,pedro-rodriguez,SIBLING
+pietro-fittipaldi,wilson-fittipaldi,GRANDPARENTS_SIBLING
+teddy-pilette,andre-pilette,PARENT
+kazuki-nakajima,satoru-nakajima,PARENT

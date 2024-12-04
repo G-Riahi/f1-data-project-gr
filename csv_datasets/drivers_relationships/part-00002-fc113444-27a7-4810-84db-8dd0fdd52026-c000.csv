@@ -1,0 +1,13 @@
+driverId,relationId,type
+michael-andretti,mario-andretti,PARENT
+andre-pilette,teddy-pilette,CHILD
+jacques-villeneuve-sr,jacques-villeneuve,SIBLINGS_CHILD
+joachim-winkelhock,markus-winkelhock,SIBLINGS_CHILD
+jackie-stewart,jimmy-stewart,SIBLING
+hans-joachim-stuck,hans-stuck,PARENT
+roy-nissany,chanoch-nissany,PARENT
+ayrton-senna,bruno-senna,SIBLINGS_CHILD
+emerson-fittipaldi,pietro-fittipaldi,GRANDCHILD
+keke-rosberg,nico-rosberg,CHILD
+jan-magnussen,kevin-magnussen,CHILD
+chanoch-nissany,roy-nissany,CHILD

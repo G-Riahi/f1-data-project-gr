@@ -4,15 +4,14 @@ from pyspark.sql import SparkSession, Row
 from pyspark.sql.types import StructType, StructField, StringType
 import json
 
-###############################################################
-# ----------------------------Goal-----------------------------
+#########################################################
+# -------------------------Goal--------------------------
 # Converting the drivers yaml files to a single CSV file
-# and possibly to a SQL RDBMS
-############################################################### 
+#########################################################
 
 folder_path = "/home/floppabox/f1/f1db/src/data/drivers" #P.S.: I like to name my virtual machines with wierd names lol 
 
-spark = SparkSession.builder.appName("Drivers YAML conversion").getOrCreate()
+spark = SparkSession.builder.appName("Drivers YAML to CSV").getOrCreate()
 
 # Getting all possible keys in the drivers data
 
@@ -26,8 +25,8 @@ for file_name in os.listdir(folder_path):
             max_length = len(list(data.keys()))
             keys = list(data.keys())
 
-print(f'there are {max_length} keys in drivers:')
-print(keys)
+#print(f'there are {max_length} keys in drivers:')
+#print(keys)
 
 # Preparing lists of dictionaries for the extraced drivers and relationships data
 
@@ -64,3 +63,26 @@ for file_name in os.listdir(folder_path):
                 record['type']=rel.get('type')
 
             drivers_relationships_data.append(record)
+
+
+# Creating spark dataframes
+
+drivers, drivers_relationships = spark.createDataFrame(drivers_data), spark.createDataFrame(drivers_relationships_data)
+
+# Creating CSV files if the csv_datasets folder exists (or also creating the folder)
+
+if not os.path.isdir('/home/floppabox/f1/f1-data-project-gr/csv_datasets'):
+    print('creaing csv_datasets folder')
+    os.makedirs('/home/floppabox/f1/f1-data-project-gr/csv_datasets')
+
+print('-'*20)
+
+if os.path.isdir('/home/floppabox/f1/f1-data-project-gr/csv_datasets/drivers') \
+    and os.path.isdir('/home/floppabox/f1/f1-data-project-gr/csv_datasets/drivers_relationships'):
+    print('updating the drivers and relationships csv files')
+    drivers.write.csv('/home/floppabox/f1/f1-data-project-gr/csv_datasets/drivers', header=True, mode='overwrite')
+    drivers_relationships.write.csv('/home/floppabox/f1/f1-data-project-gr/csv_datasets/drivers_relationships', header=True, mode='overwrite')
+else:
+    print('creating the drivers and relationships csv files')
+    drivers.write.csv('/home/floppabox/f1/f1-data-project-gr/csv_datasets/drivers', header=True)
+    drivers_relationships.write.csv('/home/floppabox/f1/f1-data-project-gr/csv_datasets/drivers_relationships', header=True)

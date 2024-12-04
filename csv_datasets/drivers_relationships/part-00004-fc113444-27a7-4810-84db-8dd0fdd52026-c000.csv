@@ -1,0 +1,17 @@
+driverId,relationId,type
+graham-hill,damon-hill,CHILD
+manfred-winkelhock,joachim-winkelhock,SIBLING
+bruno-senna,ayrton-senna,PARENTS_SIBLING
+satoru-nakajima,kazuki-nakajima,CHILD
+mick-schumacher,ralf-schumacher,PARENTS_SIBLING
+jack-brabham,david-brabham,CHILD
+gilles-villeneuve,jacques-villeneuve-sr,SIBLING
+gary-brabham,jack-brabham,PARENT
+graham-whitehead,peter-whitehead,HALF_SIBLING
+tim-parnell,reg-parnell,PARENT
+hans-stuck,hans-joachim-stuck,CHILD
+david-brabham,mike-thackwell,SIBLING_IN_LAW
+reg-parnell,tim-parnell,CHILD
+mike-thackwell,david-brabham,SIBLING_IN_LAW
+michael-schumacher,ralf-schumacher,SIBLING
+damon-hill,graham-hill,PARENT
