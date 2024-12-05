@@ -11,7 +11,7 @@ import json
 
 folder_path = "/home/floppabox/f1/f1db/src/data/drivers" #P.S.: I like to name my virtual machines with wierd names lol 
 
-spark = SparkSession.builder.appName("Drivers YAML to CSV").getOrCreate()
+spark = SparkSession.builder.appName("YAML to CSV").getOrCreate()
 
 # Getting all possible keys in the drivers data
 
@@ -67,7 +67,8 @@ for file_name in os.listdir(folder_path):
 
 # Creating spark dataframes
 
-drivers, drivers_relationships = spark.createDataFrame(drivers_data), spark.createDataFrame(drivers_relationships_data)
+drivers = spark.createDataFrame(drivers_data).select([x for x in keys if x != 'familyRelationships'])
+drivers_relationships = spark.createDataFrame(drivers_relationships_data)
 
 # Creating CSV files if the csv_datasets folder exists (or also creating the folder)
 
