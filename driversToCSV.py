@@ -49,26 +49,27 @@ for file_name in os.listdir(folder_path):
 
 # Extracting all relations of drivers
 
+id=0
 for file_name in os.listdir(folder_path):
     file_path = os.path.join(folder_path, file_name)
-
     with open(file_path, 'r') as file:
         content_drivers=yaml.safe_load(file)
-        record ={}
-
+        
         if 'familyRelationships' in content_drivers.keys():
             for rel in content_drivers['familyRelationships']:
+                record ={}
+                record['id']=id
+                id=id+1
                 record['driverId']=content_drivers.get('id')
                 record['relationId']=rel.get('driverId')
                 record['type']=rel.get('type')
-
-            drivers_relationships_data.append(record)
+                drivers_relationships_data.append(record)
 
 
 # Creating spark dataframes
 
 drivers = spark.createDataFrame(drivers_data).select([x for x in keys if x != 'familyRelationships'])
-drivers_relationships = spark.createDataFrame(drivers_relationships_data)
+drivers_relationships = spark.createDataFrame(drivers_relationships_data).select(['id','driverId', 'relationId', 'type'])
 
 # Creating CSV files if the csv_datasets folder exists (or also creating the folder)
 
