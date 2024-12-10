@@ -1,0 +1,16 @@
+id,name,fullName,type,placeName,countryId,latitude,longitude
+mont-tremblant,Mont-Tremblant,Circuit Mont-Tremblant,RACE,Mont-Tremblant,canada,46.187707,-74.609936
+hockenheimring,Hockenheimring,Hockenheimring,RACE,Hockenheim,germany,49.327778,8.565833
+estoril,Estoril,Autódromo do Estoril,RACE,Estoril,portugal,38.750833,-9.394167
+zeltweg,Zeltweg,Zeltweg,ROAD,Zeltweg,austria,47.202222,14.742222
+fuji,Fuji,Fuji Speedway,RACE,Oyama,japan,35.371667,138.926667
+long-beach,Long Beach,Long Beach,STREET,Long Beach,united-states-of-america,33.766389,-118.192778
+detroit,Detroit,Detroit Street Circuit,STREET,Detroit,united-states-of-america,42.32975,-83.040111
+yeongam,Korea,Korea International Circuit,RACE,Yeongam,south-korea,34.733333,126.416667
+miami,Miami,Miami International Autodrome,STREET,Miami Gardens,united-states-of-america,25.958056,-80.238889
+losail,Losail,Losail International Circuit,RACE,Lusail,qatar,25.49,51.454167
+porto,Boavista,Circuito da Boavista,STREET,Porto,portugal,41.170472,-8.67325
+buddh,Buddh,Buddh International Circuit,RACE,Greater Noida,india,28.350556,77.535
+east-london,Prince George,Prince George Circuit,RACE,East London,south-africa,-33.048611,27.873611
+phoenix,Phoenix,Phoenix Street Circuit,STREET,Phoenix,united-states-of-america,33.447917,-112.074583
+mexico-city,Hermanos Rodríguez,Autódromo Hermanos Rodríguez,RACE,Mexico City,mexico,19.404197,-99.088747

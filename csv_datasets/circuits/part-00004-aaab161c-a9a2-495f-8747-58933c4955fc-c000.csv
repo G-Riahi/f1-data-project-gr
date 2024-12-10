@@ -1,0 +1,18 @@
+id,name,fullName,type,placeName,countryId,latitude,longitude
+las-vegas,Las Vegas,Las Vegas Street Circuit,STREET,Las Vegas,united-states-of-america,36.175,-115.136389
+portimao,Portimão,Algarve International Circuit,RACE,Portimão,portugal,37.221944,-8.629444
+spa-francorchamps,Spa-Francorchamps,Circuit de Spa-Francorchamps,RACE,Spa,belgium,50.437222,5.971389
+ain-diab,Ain-Diab,Ain-Diab Circuit,ROAD,Casablanca,morocco,33.578611,-7.6875
+monsanto,Monsanto,Circuito de Monsanto,STREET,Lisbon,portugal,38.719722,-9.203056
+dallas,Fair Park,Fair Park,STREET,Dallas,united-states-of-america,32.781944,-96.765556
+watkins-glen,Watkins Glen,Watkins Glen International,RACE,Watkins Glen,united-states-of-america,42.336944,-76.927222
+aintree,Aintree,Aintree Motor Racing Circuit,ROAD,Aintree,united-kingdom,53.476944,-2.940556
+rouen,Rouen-Les-Essarts,Rouen-Les-Essarts,ROAD,Rouen,france,49.330639,1.004583
+dijon,Dijon-Prenois,Dijon-Prenois,RACE,Dijon,france,47.3625,4.899167
+sepang,Sepang,Sepang International Circuit,RACE,Sepang,malaysia,2.760556,101.7375
+montreal,Gilles Villeneuve,Circuit Gilles Villeneuve,STREET,Montreal,canada,45.500578,-73.522461
+hungaroring,Hungaroring,Hungaroring,RACE,Budapest,hungary,47.582222,19.251111
+mugello,Mugello,Autodromo Internazionale del Mugello,RACE,Scarperia e San Piero,italy,43.9975,11.371944
+nurburgring,Nürburgring,Nürburgring,RACE,Nürburg,germany,50.335556,6.9475
+kyalami,Kyalami,Kyalami Racing Circuit,RACE,Midrand,south-africa,-25.998611,28.068889
+brands-hatch,Brands Hatch,Brands Hatch,RACE,Fawkham,united-kingdom,51.356667,0.2625

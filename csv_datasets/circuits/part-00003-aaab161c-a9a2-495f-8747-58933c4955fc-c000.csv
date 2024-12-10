@@ -1,0 +1,16 @@
+id,name,fullName,type,placeName,countryId,latitude,longitude
+magny-cours,Magny-Cours,Circuit de Nevers Magny-Cours,RACE,Nevers,france,46.863242,3.164228
+clermont-ferrand,Charade,Charade Circuit,ROAD,Clermont-Ferrand,france,45.747222,3.038889
+bahrain,Bahrain,Bahrain International Circuit,RACE,Sakhir,bahrain,26.0325,50.510556
+paul-ricard,Paul Ricard,Circuit Paul Ricard,RACE,Le Castellet,france,43.250556,5.791667
+spielberg,Red Bull Ring,Red Bull Ring,RACE,Spielberg,austria,47.219722,14.764722
+istanbul,Istanbul Park,Istanbul Park,RACE,Istanbul,turkey,40.951667,29.405
+marina-bay,Marina Bay,Marina Bay Street Circuit,STREET,Singapore,singapore,1.291531,103.86385
+donington,Donington Park,Donington Park,RACE,Leicestershire,united-kingdom,52.829806,-1.379556
+aida,Aida,Okayama International Circuit,RACE,Aida,japan,34.915,134.221111
+silverstone,Silverstone,Silverstone Circuit,RACE,Silverstone,united-kingdom,52.078611,-1.016944
+melbourne,Melbourne,Melbourne Grand Prix Circuit,STREET,Melbourne,australia,-37.849722,144.968333
+shanghai,Shanghai,Shanghai International Circuit,RACE,Shanghai,china,31.338889,121.219722
+pescara,Pescara,Pescara Circuit,ROAD,Pescara,italy,42.475,14.150833
+riverside,Riverside,Riverside International Raceway,RACE,Riverside,united-states-of-america,33.937,-117.272556
+montjuic,Montjuïc,Circuito de Montjuïc,STREET,Barcelona,spain,41.366389,2.151667

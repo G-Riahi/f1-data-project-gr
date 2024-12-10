@@ -25,7 +25,6 @@ for file_name in os.listdir(folder_path):
             max_length = len(list(data.keys()))
             keys = list(data.keys())
 
-print(keys)
 
 # Preparing lists of dictionaries for the extraced circuits and previous names data
 
@@ -46,7 +45,7 @@ for file_name in os.listdir(folder_path):
 
         circuits_data.append(record)
 
-# Extracting all relations of drivers
+# Extracting all previous names of circuits
 
 id=0
 for file_name in os.listdir(folder_path):
@@ -62,3 +61,27 @@ for file_name in os.listdir(folder_path):
                 record['circuitId']=content['id']
                 record['previousName']=name
                 previous_names_data.append(record)
+
+
+# Creating spark dataframes
+
+circuits = spark.createDataFrame(circuits_data).select([x for x in keys if x != 'previousNames'])
+previous_circuit_names = spark.createDataFrame(previous_names_data).select(['id','circuitId', 'previousName'])
+
+# Creating CSV files if the csv_datasets folder exists (or also creating the folder)
+
+if not os.path.isdir('/home/floppabox/f1/f1-data-project-gr/csv_datasets'):
+    print('creaing csv_datasets folder')
+    os.makedirs('/home/floppabox/f1/f1-data-project-gr/csv_datasets')
+
+print('-'*20)
+
+if os.path.isdir('/home/floppabox/f1/f1-data-project-gr/csv_datasets/circuits') \
+    and os.path.isdir('/home/floppabox/f1/f1-data-project-gr/csv_datasets/previous_circuits_names'):
+    print('updating the circuits and previous names csv files')
+    circuits.write.csv('/home/floppabox/f1/f1-data-project-gr/csv_datasets/circuits', header=True, mode='overwrite')
+    previous_circuit_names.write.csv('/home/floppabox/f1/f1-data-project-gr/csv_datasets/previous_circuits_names', header=True, mode='overwrite')
+else:
+    print('creating the circuits and previous names csv files')
+    circuits.write.csv('/home/floppabox/f1/f1-data-project-gr/csv_datasets/circuits', header=True)
+    previous_circuit_names.write.csv('/home/floppabox/f1/f1-data-project-gr/csv_datasets/previous_circuits_names', header=True)

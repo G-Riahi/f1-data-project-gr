@@ -1,0 +1,16 @@
+id,name,fullName,type,placeName,countryId,latitude,longitude
+buenos-aires,Juan y Oscar Gálvez,Autódromo Juan y Oscar Gálvez,RACE,Buenos Aires,argentina,-34.694272,-58.459347
+imola,Enzo e Dino Ferrari,Autodromo Internazionale Enzo e Dino Ferrari,RACE,Imola,italy,44.341111,11.713333
+catalunya,Catalunya,Circuit de Barcelona-Catalunya,RACE,Montmeló,spain,41.57,2.261111
+zandvoort,Zandvoort,Circuit Park Zandvoort,RACE,Zandvoort,netherlands,52.388819,4.540922
+baku,Baku,Baku City Circuit,STREET,Baku,azerbaijan,40.3725,49.853333
+sochi,Sochi,Sochi Autodrom,ROAD,Sochi,russia,43.410278,39.968271
+jacarepagua,Nelson Piquet,Autódromo Internacional Nelson Piquet,RACE,Rio de Janeiro,brazil,-22.975556,-43.395
+jarama,Jarama,Circuito del Jarama,RACE,Madrid,spain,40.617111,-3.585583
+pedralbes,Pedralbes,Pedralbes Circuit,STREET,Barcelona,spain,41.390278,2.116667
+sebring,Sebring,Sebring International Raceway,ROAD,Sebring,united-states-of-america,27.454741,-81.348267
+anderstorp,Anderstorp Raceway,Anderstorp Raceway,RACE,Anderstorp,sweden,57.264167,13.601389
+jeddah,Jeddah,Jeddah Corniche Circuit,STREET,Jeddah,saudi-arabia,21.543333,39.172778
+nivelles,Nivelles-Baulers,Nivelles-Baulers,RACE,Nivelles,belgium,50.621111,4.326944
+adelaide,Adelaide,Adelaide Street Circuit,STREET,Adelaide,australia,-34.927222,138.617222
+austin,Americas,Circuit of the Americas,RACE,Austin,united-states-of-america,30.132778,-97.641111

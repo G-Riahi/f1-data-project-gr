@@ -1,0 +1,16 @@
+id,name,fullName,type,placeName,countryId,latitude,longitude
+bremgarten,Bremgarten,Circuit Bremgarten,ROAD,Bern,switzerland,46.95,7.410833
+valencia,Valencia,Valencia Street Circuit,STREET,Valencia,spain,39.458778,-0.325556
+reims,Reims-Gueux,Reims-Gueux,ROAD,Reims,france,49.254075,3.930561
+zolder,Zolder,Circuit Zolder,RACE,Heusden-Zolder,belgium,50.988889,5.255556
+indianapolis,Indianapolis,Indianapolis Motor Speedway,RACE,Indianapolis,united-states-of-america,39.798333,-86.232778
+yas-marina,Yas Marina,Yas Marina Circuit,RACE,Abu Dhabi,united-arab-emirates,24.467222,54.603056
+avus,AVUS,AVUS,ROAD,Berlin,germany,52.480556,13.251389
+suzuka,Suzuka,Suzuka Circuit,RACE,Suzuka,japan,34.843056,136.540556
+caesars-palace,Caesars Palace,Caesars Palace,STREET,Las Vegas,united-states-of-america,36.116944,-115.175
+monaco,Monaco,Circuit de Monaco,STREET,Monte Carlo,monaco,43.734722,7.420556
+mosport,Mosport,Canadian Tire Motorsport Park,RACE,Bowmanville,canada,44.05,-78.677778
+monza,Monza,Autodromo Nazionale Monza,RACE,Monza,italy,45.620556,9.289444
+jerez,Jerez,Circuito de Jerez,RACE,Jerez de la Frontera,spain,36.708333,-6.034167
+interlagos,José Carlos Pace,Autódromo José Carlos Pace,RACE,São Paulo,brazil,-23.701111,-46.697222
+bugatti,Bugatti,Bugatti Circuit,RACE,Le Mans,france,47.937694,0.225611
