@@ -53,14 +53,14 @@ id=0
 for file_name in os.listdir(folder_path):
     file_path = os.path.join(folder_path, file_name)
     with open(file_path, 'r') as file:
-        content_drivers=yaml.safe_load(file)
+        content=yaml.safe_load(file)
         
-        if 'familyRelationships' in content_drivers.keys():
-            for rel in content_drivers['familyRelationships']:
+        if 'familyRelationships' in content.keys():
+            for rel in content['familyRelationships']:
                 record ={}
                 record['id']=id
                 id=id+1
-                record['driverId']=content_drivers.get('id')
+                record['driverId']=content.get('id')
                 record['relationId']=rel.get('driverId')
                 record['type']=rel.get('type')
                 drivers_relationships_data.append(record)
