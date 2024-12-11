@@ -1,6 +1,4 @@
 id,name,firstName,lastName,fullName,abbreviation,permanentNumber,gender,dateOfBirth,dateOfDeath,placeOfBirth,countryOfBirthCountryId,nationalityCountryId,secondNationalityCountryId
-frank-dochnal,Frank Dochnal,Frank,Dochnal,Frank J. Dochnal,DOC,,MALE,1920-10-08,2010-07-07,St. Louis,united-states-of-america,united-states-of-america,
-bill-vukovich,Bill Vukovich,Bill,Vukovich,William John Vukovich,VUK,,MALE,1918-12-13,1955-05-30,Oakland,united-states-of-america,united-states-of-america,
 bernard-de-dryver,Bernard de Dryver,Bernard,De Dryver,Bernard de Dryver,DED,,MALE,1952-09-19,,Brussels,belgium,belgium,
 narain-karthikeyan,Narain Karthikeyan,Narain,Karthikeyan,Kumar Ram Narain Karthikeyan,KAR,,MALE,1977-01-14,,Coimbatore,india,india,
 gene-force,Gene Force,Gene,Force,Gene Force,FOR,,MALE,1916-06-15,1983-08-21,New Madison,united-states-of-america,united-states-of-america,
@@ -179,3 +177,6 @@ karl-gunther-bechem,Karl-Günther Bechem,Karl-Günther,Bechem,Karl-Günther Bech
 hubert-hahne,Hubert Hahne,Hubert,Hahne,Hubert Hahne,HAH,,MALE,1935-03-28,2019-04-24,Moers,germany,germany,
 dennis-poore,Dennis Poore,Dennis,Poore,Roger Dennistoun Poore,POO,,MALE,1916-08-19,1987-02-12,London,united-kingdom,united-kingdom,
 willi-heeks,Willi Heeks,Willi,Heeks,Willi Heeks,HEE,,MALE,1922-02-13,1996-08-13,Moorlage,germany,germany,
+helmuth-koinigg,Helmuth Koinigg,Helmuth,Koinigg,Helmuth Koinigg,KOI,,MALE,1948-11-03,1974-10-06,Vienna,austria,austria,
+ryo-hirakawa,Ryō Hirakawa,Ryō,Hirakawa,Ryō Hirakawa,HIR,,MALE,1994-03-07,,Kure,japan,japan,
+alexander-rossi,Alexander Rossi,Alexander,Rossi,Alexander Michael Rossi,RSI,53,MALE,1991-09-25,,Nevada City,united-states-of-america,united-states-of-america,

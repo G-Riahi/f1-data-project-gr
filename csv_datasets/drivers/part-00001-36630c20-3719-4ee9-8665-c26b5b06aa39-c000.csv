@@ -1,5 +1,4 @@
 id,name,firstName,lastName,fullName,abbreviation,permanentNumber,gender,dateOfBirth,dateOfDeath,placeOfBirth,countryOfBirthCountryId,nationalityCountryId,secondNationalityCountryId
-andre-lotterer,André Lotterer,André,Lotterer,André Lotterer,LOT,,MALE,1981-11-19,,Duisburg,germany,germany,belgium
 roberto-guerrero,Roberto Guerrero,Roberto,Guerrero,Roberto José Guerrero Isaza,GUE,,MALE,1958-11-16,,Medellín,colombia,colombia,
 silvio-moser,Silvio Moser,Silvio,Moser,Silvio Moser,MOS,,MALE,1941-04-24,1974-05-26,Zürich,switzerland,switzerland,
 willy-mairesse,Willy Mairesse,Willy,Mairesse,Willy Mairesse,MAI,,MALE,1928-10-01,1969-09-02,Momignies,belgium,belgium,
@@ -179,3 +178,5 @@ francois-picard,François Picard,François,Picard,François Picard,PIC,,MALE,192
 jan-charouz,Jan Charouz,Jan,Charouz,Jan Charouz,CHA,,MALE,1987-07-17,,Prague,czech-republic,czech-republic,
 henry-taylor,Henry Taylor,Henry,Taylor,Henry Taylor,TAY,,MALE,1932-12-16,2013-10-24,Shefford,united-kingdom,united-kingdom,
 rio-haryanto,Rio Haryanto,Rio,Haryanto,Rio Haryanto,HAR,,MALE,1993-01-22,,Surakarta,indonesia,indonesia,
+frank-dochnal,Frank Dochnal,Frank,Dochnal,Frank J. Dochnal,DOC,,MALE,1920-10-08,2010-07-07,St. Louis,united-states-of-america,united-states-of-america,
+bill-vukovich,Bill Vukovich,Bill,Vukovich,William John Vukovich,VUK,,MALE,1918-12-13,1955-05-30,Oakland,united-states-of-america,united-states-of-america,

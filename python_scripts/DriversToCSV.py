@@ -16,7 +16,7 @@ folder_path = "/home/floppabox/f1/f1db/src/data/drivers" #P.S.: I like to name m
 
 # Getting all possible keys in the drivers data
 
-def keys(folder_path):
+def keys_list(folder_path):
     max_length = 0
     keys = []
     for file_name in os.listdir(folder_path):
@@ -50,7 +50,7 @@ def keys(folder_path):
 
 def transformData(folder_path):
 
-    keys = keys(folder_path)
+    keys = keys_list(folder_path)
     drivers_data, drivers_relationships_data = [], []
     id = 0
 
@@ -66,15 +66,13 @@ def transformData(folder_path):
                     record[key]= content_drivers.get(key)
 
             drivers_data.append(record)
-
-            content=yaml.safe_load(file)
             
-            if 'familyRelationships' in content.keys():
-                for rel in content['familyRelationships']:
+            if 'familyRelationships' in content_drivers.keys():
+                for rel in content_drivers['familyRelationships']:
                     record ={}
                     record['id']=id
                     id=id+1
-                    record['driverId']=content.get('id')
+                    record['driverId']=content_drivers.get('id')
                     record['relationId']=rel.get('driverId')
                     record['type']=rel.get('type')
                     drivers_relationships_data.append(record)
@@ -129,9 +127,9 @@ else:
 def driversToSpark(folder_path="/home/floppabox/f1/f1db/src/data/drivers" , folder1='drivers', folder2='drivers_relationships', appName='YAML to CSV'):
 
     spark = SparkSession.builder.appName("YAML to CSV").getOrCreate()
-    
+
     drivers_data, drivers_relationships_data = transformData(folder_path)
-    keys = keys(folder_path)
+    keys = keys_list(folder_path)
     drivers = spark.createDataFrame(drivers_data).select([x for x in keys if x != 'familyRelationships'])
     drivers_relationships = spark.createDataFrame(drivers_relationships_data).select(['id','driverId', 'relationId', 'type'])
 

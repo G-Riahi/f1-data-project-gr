@@ -1,0 +1,11 @@
+id,name,fullName,shortName,abbreviation,countryId
+belgium,Belgium,Belgian Grand Prix,Belgian GP,BEL,belgium
+india,India,Indian Grand Prix,Indian GP,IND,india
+united-states-west,United States West,United States Grand Prix West,United States GP West,USA,united-states-of-america
+emilia-romagna,Emilia Romagna,Emilia Romagna Grand Prix,Emilia Romagna GP,EMR,italy
+abu-dhabi,Abu Dhabi,Abu Dhabi Grand Prix,Abu Dhabi GP,ABD,united-arab-emirates
+styria,Styria,Styrian Grand Prix,Styrian GP,STE,austria
+south-africa,South Africa,South African Grand Prix,South African GP,ZAF,south-africa
+detroit,Detroit,Detroit Grand Prix,Detroit GP,DET,united-states-of-america
+miami,Miami,Miami Grand Prix,Miami GP,MIA,united-states-of-america
+korea,Korea,Korean Grand Prix,Korean GP,KOR,south-korea

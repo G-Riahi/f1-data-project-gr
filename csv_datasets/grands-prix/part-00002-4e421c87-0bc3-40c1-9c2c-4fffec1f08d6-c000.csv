@@ -1,0 +1,11 @@
+id,name,fullName,shortName,abbreviation,countryId
+pacific,Pacific,Pacific Grand Prix,Pacific GP,PAC,
+great-britain,Great Britain,British Grand Prix,British GP,GBR,united-kingdom
+morocco,Morocco,Moroccan Grand Prix,Moroccan GP,MAR,morocco
+indianapolis,Indianapolis,Indianapolis 500,Indy 500,IND,united-states-of-america
+germany,Germany,German Grand Prix,German GP,DEU,germany
+france,France,French Grand Prix,French GP,FRA,france
+united-states,United States,United States Grand Prix,United States GP,USA,united-states-of-america
+azerbaijan,Azerbaijan,Azerbaijan Grand Prix,Azerbaijan GP,AZE,azerbaijan
+tuscany,Tuscany,Tuscan Grand Prix,Tuscan GP,TUS,italy
+caesars-palace,Caesars Palace,Caesars Palace Grand Prix,Caesars Palace GP,CAE,united-states-of-america

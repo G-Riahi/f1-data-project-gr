@@ -1,6 +1,4 @@
 id,name,firstName,lastName,fullName,abbreviation,permanentNumber,gender,dateOfBirth,dateOfDeath,placeOfBirth,countryOfBirthCountryId,nationalityCountryId,secondNationalityCountryId
-helmuth-koinigg,Helmuth Koinigg,Helmuth,Koinigg,Helmuth Koinigg,KOI,,MALE,1948-11-03,1974-10-06,Vienna,austria,austria,
-alexander-rossi,Alexander Rossi,Alexander,Rossi,Alexander Michael Rossi,RSI,53,MALE,1991-09-25,,Nevada City,united-states-of-america,united-states-of-america,
 andre-guelfi,André Guelfi,André,Guelfi,André Guelfi,GUE,,MALE,1919-05-06,2016-06-28,Mazagan,morocco,france,
 rob-schroeder,Rob Schroeder,Rob,Schroeder,Robert Schroeder,SCH,,MALE,1926-05-11,2011-12-03,El Dorado,united-states-of-america,united-states-of-america,
 wilson-fittipaldi,Wilson Fittipaldi,Wilson,Fittipaldi,Wilson Fittipaldi Júnior,FIT,,MALE,1943-12-25,2024-02-23,São Paulo,brazil,brazil,
@@ -48,6 +46,7 @@ conny-andersson,Conny Andersson,Conny,Andersson,Conny Andersson,AND,,MALE,1939-1
 bruce-kessler,Bruce Kessler,Bruce,Kessler,Bruce Kessler,KES,,MALE,1936-03-23,2024-04-04,Seattle,united-states-of-america,united-states-of-america,
 mike-harris,Mike Harris,Mike,Harris,Mike Harris,HAR,,MALE,1939-05-25,2021-11-08,Mufulira,zambia,south-africa,
 gunnar-nilsson,Gunnar Nilsson,Gunnar,Nilsson,Gunnar Nilsson,NIL,,MALE,1948-11-20,1978-10-20,Helsingborg,sweden,sweden,
+luke-browning,Luke Browning,Luke,Browning,Luke Browning,BRO,,MALE,2002-01-31,,Kingsley,united-kingdom,united-kingdom,
 carel-godin-de-beaufort,Carel Godin de Beaufort,Carel,Godin de Beaufort,Karel Pieter Antoni Jan Hubertus Godin de Beaufort,DEB,,MALE,1934-04-10,1964-08-02,Maarsbergen,netherlands,netherlands,
 george-russell,George Russell,George,Russell,George Russell,RUS,63,MALE,1998-02-15,,King's Lynn,united-kingdom,united-kingdom,
 teo-fabi,Teo Fabi,Teo,Fabi,Teodorico Fabi,FAB,,MALE,1955-03-09,,Milan,italy,italy,
@@ -179,3 +178,5 @@ rudi-fischer,Rudi Fischer,Rudi,Fischer,Rudolf Fischer,FIS,,MALE,1912-04-19,1976-
 roberto-moreno,Roberto Moreno,Roberto,Moreno,Roberto Pupo Moreno,MOR,,MALE,1959-02-11,,Rio de Janeiro,brazil,brazil,
 brendon-hartley,Brendon Hartley,Brendon,Hartley,Brendon Hartley,HAR,28,MALE,1989-11-10,,Palmerston North,new-zealand,new-zealand,
 jackie-lewis,Jackie Lewis,Jackie,Lewis,Jackie Lewis,LEW,,MALE,1936-11-01,,Stroud,united-kingdom,united-kingdom,
+piero-taruffi,Piero Taruffi,Piero,Taruffi,Piero Taruffi,TAR,,MALE,1906-10-12,1988-01-12,Albano Laziale,italy,italy,
+guy-mairesse,Guy Mairesse,Guy,Mairesse,Guy Mairesse,MAI,,MALE,1910-08-10,1954-04-24,Warmeriville,france,france,

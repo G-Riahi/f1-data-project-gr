@@ -95,7 +95,7 @@ def simpleFunc():
 with DAG('firstDAG', schedule_interval=None, start_date=datetime(2024,12,11), catchup=False) as dag:
     clone_update_dataset = BashOperator(
         task_id = 'clone_update_dataset',
-        bash_command="/home/floppabox/f1/f1-data-project-gr/pull-dataset.sh"
+        bash_command="sh /home/floppabox/f1/f1-data-project-gr/pull-dataset.sh "
     )
     
     transform_drivers = PythonOperator(
@@ -106,12 +106,8 @@ with DAG('firstDAG', schedule_interval=None, start_date=datetime(2024,12,11), ca
     transform_grand_prix = PythonOperator(
         task_id = "transform_grand_prix",
         python_callable = sparkDataset,
-        op_args=['grand-prix',],
+        op_args=['grands-prix',],
     )
 
-    hello = PythonOperator(
-        task_id = 'hello',
-        python_callable = simpleFunc,
-    )
 
-    clone_update_dataset >> [transform_drivers, transform_grand_prix] >> hello
+    clone_update_dataset >> [transform_drivers, transform_grand_prix]
