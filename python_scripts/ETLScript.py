@@ -6,6 +6,8 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
 
+from python_scripts.DriversToCSV import driversToSpark
+
 from datetime import datetime
 
 import json
@@ -91,8 +93,25 @@ def simpleFunc():
     print('bruh')
 
 with DAG('firstDAG', schedule_interval=None, start_date=datetime(2024,12,11), catchup=False) as dag:
-    hello_task = PythonOperator(
-        task_id = 'hello_task',
-        python_callable=simpleFunc,
+    clone_update_dataset = BashOperator(
+        task_id = 'clone_update_dataset',
+        bash_command="/home/floppabox/f1/f1-data-project-gr/pull-dataset.sh"
     )
-        
+    
+    transform_drivers = PythonOperator(
+        task_id = 'transform_drivers',
+        python_callable = driversToSpark,
+    )
+
+    transform_grand_prix = PythonOperator(
+        task_id = "transform_grand_prix",
+        python_callable = sparkDataset,
+        op_args=['grand-prix',],
+    )
+
+    hello = PythonOperator(
+        task_id = 'hello',
+        python_callable = simpleFunc,
+    )
+
+    clone_update_dataset >> [transform_drivers, transform_grand_prix] >> hello
