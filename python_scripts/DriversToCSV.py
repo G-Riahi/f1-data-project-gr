@@ -12,7 +12,7 @@ import os
 
 folder_path = "/home/floppabox/f1/f1db/src/data/drivers" #P.S.: I like to name my virtual machines with wierd names lol 
 
-spark = SparkSession.builder.appName("YAML to CSV").getOrCreate()
+
 
 # Getting all possible keys in the drivers data
 
@@ -126,8 +126,10 @@ else:
 
 
 
-def driversToSpark(folder_path="/home/floppabox/f1/f1db/src/data/drivers" , folder1='drivers', folder2='drivers_relationships'):
+def driversToSpark(folder_path="/home/floppabox/f1/f1db/src/data/drivers" , folder1='drivers', folder2='drivers_relationships', appName='YAML to CSV'):
 
+    spark = SparkSession.builder.appName("YAML to CSV").getOrCreate()
+    
     drivers_data, drivers_relationships_data = transformData(folder_path)
     keys = keys(folder_path)
     drivers = spark.createDataFrame(drivers_data).select([x for x in keys if x != 'familyRelationships'])
