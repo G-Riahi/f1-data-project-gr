@@ -5,8 +5,10 @@ from pyspark.sql.types import StructType, StructField, StringType
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
+from airflow.utils.task_group import TaskGroup
 
 from python_scripts.DriversToCSV import driversToSpark
+from python_scripts.CircuitsToCSV import circuitsToSpark
 
 from datetime import datetime
 
@@ -87,27 +89,32 @@ def sparkDataset(folderName, appName='YAML to CSV'):
 
 
 
-#testing apache airflow (for now)
+#FIrst DAG function
 
-def simpleFunc():
-    print('bruh')
-
-with DAG('firstDAG', schedule_interval=None, start_date=datetime(2024,12,11), catchup=False) as dag:
+with DAG('transformationDAG', schedule_interval=None, start_date=datetime(2024,12,11), catchup=False) as dag:
     clone_update_dataset = BashOperator(
         task_id = 'clone_update_dataset',
         bash_command="sh /home/floppabox/f1/f1-data-project-gr/pull-dataset.sh "
     )
-    
-    transform_drivers = PythonOperator(
-        task_id = 'transform_drivers',
-        python_callable = driversToSpark,
-    )
 
-    transform_grand_prix = PythonOperator(
-        task_id = "transform_grand_prix",
-        python_callable = sparkDataset,
-        op_args=['grands-prix',],
-    )
+    with TaskGroup("transformYAMLtoCSV", tooltip="YAML transfomation group") as YAMLtoCSV:
+        transform_drivers = PythonOperator(
+            task_id = 'transform_drivers',
+            python_callable = driversToSpark,
+        )
+
+        transform_circuits = PythonOperator(
+            task_id = "transform_circuits",
+            python_callable = circuitsToSpark,
+        )
+
+        transform_grand_prix = PythonOperator(
+            task_id = "transform_grand_prix",
+            python_callable = sparkDataset,
+            op_args=['grands-prix',],
+        )
+
+        [transform_drivers, transform_grand_prix, transform_circuits]
 
 
-    clone_update_dataset >> [transform_drivers, transform_grand_prix]
+    clone_update_dataset >> YAMLtoCSV
