@@ -10,9 +10,6 @@ import os
 # Converting the drivers yaml files to a single CSV file
 #########################################################
 
-folder_path = "/home/floppabox/f1/f1db/src/data/drivers" #P.S.: I like to name my virtual machines with wierd names lol 
-
-
 
 # Getting all possible keys in the drivers data
 
