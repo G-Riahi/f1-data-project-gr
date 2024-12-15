@@ -1,0 +1,12 @@
+consructorIdFrom,constructorIdTo,yearFrom,yearTo
+bar,honda,2006,2008
+honda,brawn,2009,2009
+brawn,mercedes,2010,
+,toleman,1981,1985
+toleman,benetton,1986,2001
+benetton,renault,2002,2011
+renault,lotus-f1,2012,2015
+lotus-f1,renault,2016,2020
+renault,alpine,2021,
+,lotus-racing,2010,2011
+lotus-racing,caterham,2012,2014

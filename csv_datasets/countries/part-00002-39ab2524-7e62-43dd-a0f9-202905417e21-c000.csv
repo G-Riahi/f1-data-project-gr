@@ -1,0 +1,50 @@
+id,alpha2Code,alpha3Code,name,demonym,continentId
+ethiopia,ET,ETH,Ethiopia,Ethiopian,africa
+turks-and-caicos-islands,TC,TCA,Turks and Caicos Islands,Turks and Caicos Islander,north-america
+greenland,GL,GRL,Greenland,Greenlander,north-america
+uruguay,UY,URY,Uruguay,Uruguayan,south-america
+vietnam,VN,VNM,Vietnam,Vietnamese,asia
+germany,DE,DEU,Germany,German,europe
+macedonia,MK,MKD,Macedonia,Macedonian,europe
+vanuatu,VU,VUT,Vanuatu,Ni-Vanuatu,australia
+bosnia-and-herzegovina,BA,BIH,Bosnia and Herzegovina,Bosnian,europe
+bonaire,BQ,BES,Bonaire,Bonairian,north-america
+france,FR,FRA,France,French,europe
+cyprus,CY,CYP,Cyprus,Cypriot,asia
+slovenia,SI,SVN,Slovenia,Slovenian,europe
+samoa,WS,WSM,Samoa,Samoan,australia
+federated-states-of-micronesia,FM,FSM,Federated States of Micronesia,Micronesian,australia
+namibia,NA,NAM,Namibia,Namibian,africa
+new-caledonia,NC,NCL,New Caledonia,New Caledonians,australia
+saint-kitts-and-nevis,KN,KNA,Saint Kitts and Nevis,Kittian/Nevisian,north-america
+guatemala,GT,GTM,Guatemala,Guatemalan,north-america
+equatorial-guinea,GQ,GNQ,Equatorial Guinea,Equatorial Guinean,africa
+egypt,EG,EGY,Egypt,Egyptian,africa
+norway,NO,NOR,Norway,Norwegian,europe
+saint-lucia,LC,LCA,Saint Lucia,,north-america
+sierra-leone,SL,SLE,Sierra Leone,Sierra Leonean,africa
+mali,ML,MLI,Mali,Malian,africa
+azerbaijan,AZ,AZE,Azerbaijan,Azerbaijanian,asia
+french-guiana,GF,GUF,French Guiana,French Guianese,south-america
+trinidad-and-tobago,TT,TTO,Trinidad and Tobago,Trinidadian/Tobagonian,north-america
+sri-lanka,LK,LKA,Sri Lanka,Sri Lankan,asia
+el-salvador,SV,SLV,El Salvador,Salvadoran,north-america
+monaco,MC,MCO,Monaco,Monégasque,europe
+nepal,NP,NPL,Nepal,Nepalese,asia
+gabon,GA,GAB,Gabon,Gabonese,africa
+japan,JP,JPN,Japan,Japanese,asia
+panama,PA,PAN,Panama,Panamanian,north-america
+fiji,FJ,FJI,Fiji,Fijian,australia
+solomon-islands,SB,SLB,Solomon Islands,Solomon Islander,australia
+swaziland,SZ,SWZ,Swaziland,Swazi,africa
+bahamas,BS,BHS,Bahamas,Bahamian,north-america
+kuwait,KW,KWT,Kuwait,Kuwaiti,asia
+serbia,RS,SRB,Serbia,Serbian,europe
+angola,AO,AGO,Angola,Angolan,africa
+spain,ES,ESP,Spain,Spanish,europe
+denmark,DK,DNK,Denmark,Danish,europe
+paraguay,PY,PRY,Paraguay,Paraguayan,south-america
+anguilla,AI,AIA,Anguilla,Anguillan,north-america
+bahrain,BH,BHR,Bahrain,Bahraini,asia
+guam,GU,GUM,Guam,Guamanian,australia
+malaysia,MY,MYS,Malaysia,Malaysian,asia

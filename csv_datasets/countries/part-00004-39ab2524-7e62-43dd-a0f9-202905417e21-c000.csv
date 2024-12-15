@@ -1,0 +1,54 @@
+id,alpha2Code,alpha3Code,name,demonym,continentId
+hungary,HU,HUN,Hungary,Hungarian,europe
+indonesia,ID,IDN,Indonesia,Indonesian,asia
+liechtenstein,LI,LIE,Liechtenstein,Liechtensteiner,europe
+suriname,SR,SUR,Suriname,Surinamese,south-america
+argentina,AR,ARG,Argentina,Argentine,south-america
+sweden,SE,SWE,Sweden,Swedish,europe
+zambia,ZM,ZMB,Zambia,Zambian,africa
+mozambique,MZ,MOZ,Mozambique,Mozambican,africa
+cook-islands,CK,COK,Cook Islands,Cook Islander,australia
+bulgaria,BG,BGR,Bulgaria,Bulgarian,europe
+libya,LY,LBY,Libya,Libyan,africa
+french-southern-territories,TF,ATF,French Southern Territories,French,antarctica
+new-zealand,NZ,NZL,New Zealand,New Zealander,australia
+nicaragua,NI,NIC,Nicaragua,Nicaraguan,north-america
+montenegro,ME,MNE,Montenegro,Montenegrin,europe
+togo,TG,TGO,Togo,Togolese,africa
+aland-islands,AX,ALA,Åland Islands,Ålandic,europe
+croatia,HR,HRV,Croatia,Croatian,europe
+iraq,IQ,IRQ,Iraq,Iraqi,asia
+papua-new-guinea,PG,PNG,Papua New Guinea,Papua New Guinean,australia
+kiribati,KI,KIR,Kiribati,I-Kiribati,australia
+malawi,MW,MWI,Malawi,Malawian,africa
+australia,AU,AUS,Australia,Australian,australia
+rwanda,RW,RWA,Rwanda,Rwandan,africa
+montserrat,MS,MSR,Montserrat,Montserratian,north-america
+ecuador,EC,ECU,Ecuador,Ecuadorian,south-america
+saint-helena-ascension-and-tristan-da-cunha,SH,SHN,"Saint Helena, Ascension and Tristan da Cunha",Saint Helenian,africa
+south-sudan,SS,SSD,South Sudan,South Sudanese,africa
+saint-barthelemy,BL,BLM,Saint Barthélemy,Barthélemois,north-america
+sao-tome-and-principe,ST,STP,São Tomé and Príncipe,São Toméan,africa
+belarus,BY,BLR,Belarus,Belarusian,europe
+mauritania,MR,MRT,Mauritania,Mauritanian,africa
+qatar,QA,QAT,Qatar,Qatari,asia
+tunisia,TN,TUN,Tunisia,Tunisian,africa
+bermuda,BM,BMU,Bermuda,Bermudian,north-america
+pitcairn-islands,PN,PCN,Pitcairn Islands,Pitcairn Islander,australia
+palestine,PS,PSE,Palestine,Palestinian,asia
+guyana,GY,GUY,Guyana,Guyanese,south-america
+guinea-bissau,GW,GNB,Guinea-Bissau,Guinean,africa
+jersey,JE,JEY,Jersey,,europe
+turkmenistan,TM,TKM,Turkmenistan,Turkmenistani,asia
+georgia,GE,GEO,Georgia,Georgian,asia
+lesotho,LS,LSO,Lesotho,Mosotho,africa
+liberia,LR,LBR,Liberia,Liberian,africa
+zimbabwe,ZW,ZWE,Zimbabwe,Zimbabwean,africa
+ghana,GH,GHA,Ghana,Ghanaian,africa
+portugal,PT,PRT,Portugal,Portuguese,europe
+botswana,BW,BWA,Botswana,Motswana,africa
+benin,BJ,BEN,Benin,Beninese,africa
+north-korea,KP,PRK,North Korea,North Korean,asia
+afghanistan,AF,AFG,Afghanistan,Afghan,asia
+nigeria,NG,NGA,Nigeria,Nigerian,africa
+burundi,BI,BDI,Burundi,Burundian,africa

@@ -9,6 +9,7 @@ from airflow.utils.task_group import TaskGroup
 
 from python_scripts.DriversToCSV import driversToSpark
 from python_scripts.CircuitsToCSV import circuitsToSpark
+from python_scripts.ConstructorsToCSV import constructorsToSpark
 
 from datetime import datetime
 
@@ -98,23 +99,78 @@ with DAG('transformationDAG', schedule_interval=None, start_date=datetime(2024,1
     )
 
     with TaskGroup("transformYAMLtoCSV", tooltip="YAML transfomation group") as YAMLtoCSV:
-        transform_drivers = PythonOperator(
-            task_id = 'transform_drivers',
-            python_callable = driversToSpark,
-        )
+        
+        with TaskGroup("normalizingDatasets", tooltip="normalizing datasets with different structures") as normData:
+            transform_drivers = PythonOperator(
+                task_id = 'transform_drivers',
+                python_callable = driversToSpark,
+            )
 
-        transform_circuits = PythonOperator(
-            task_id = "transform_circuits",
-            python_callable = circuitsToSpark,
-        )
+            transform_circuits = PythonOperator(
+                task_id = "transform_circuits",
+                python_callable = circuitsToSpark,
+            )
 
-        transform_grand_prix = PythonOperator(
-            task_id = "transform_grand_prix",
-            python_callable = sparkDataset,
-            op_args=['grands-prix',],
-        )
+            transform_constructors = PythonOperator(
+                task_id = "transform_constructors",
+                python_callable = constructorsToSpark,
+            )
 
-        [transform_drivers, transform_grand_prix, transform_circuits]
+            [transform_drivers, transform_circuits, transform_constructors]
+
+        with TaskGroup("transformSimpleDatasets", tooltip="transforming datasets with a simple structure") as transformData:
+            transform_grand_prix = PythonOperator(
+                task_id = "transform_grand_prix",
+                python_callable = sparkDataset,
+                op_args=['grands-prix',],
+            )
+
+            transform_chassis = PythonOperator(
+                task_id = "transform_chassis",
+                python_callable = sparkDataset,
+                op_args=['chassis',],
+            )
+
+            transform_continents = PythonOperator(
+                task_id = "transform_continents",
+                python_callable = sparkDataset,
+                op_args=['continents',],
+            )
+
+            transform_countries = PythonOperator(
+                task_id = "transform_countries",
+                python_callable = sparkDataset,
+                op_args=['countries',],
+            )
+
+            transform_eng_manu = PythonOperator(
+                task_id = "transform_eng_manu",
+                python_callable = sparkDataset,
+                op_args=['engine-manufacturers',],
+            )
+
+            transform_engines = PythonOperator(
+                task_id = "transform_engines",
+                python_callable = sparkDataset,
+                op_args=['engines',],
+            )
+
+            transform_entrants = PythonOperator(
+                task_id = "transform_entrants",
+                python_callable = sparkDataset,
+                op_args=['entrants',],
+            )
+
+            transform_tyres = PythonOperator(
+                task_id = "transform_tyres",
+                python_callable = sparkDataset,
+                op_args=['tyre-manufacturers',],
+            )
+
+            [transform_chassis, transform_continents, transform_countries, transform_eng_manu, transform_engines, transform_entrants, transform_tyres]
+
+
+        [transformData, normData]
 
 
     clone_update_dataset >> YAMLtoCSV

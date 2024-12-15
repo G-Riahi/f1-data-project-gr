@@ -1,0 +1,84 @@
+id,engineManufacturerId,name,fullName,capacity,configuration,aspiration
+petronas-01a-30-v10,petronas,01A,Petronas 01A 3.0 V10,3.0,V10,NATURALLY_ASPIRATED
+gordini-20-20-l6,gordini,20,Gordini 20 2.0 L6,2.0,L6,NATURALLY_ASPIRATED
+life-f35-35-w12,life,F35,Life F35 3.5 W12,3.5,W12,NATURALLY_ASPIRATED
+bmw-p83-30-v10,bmw,P83,BMW P83 3.0 V10,3.0,V10,NATURALLY_ASPIRATED
+ferrari-166-20-v12,ferrari,166,Ferrari 166 2.0 V12,2.0,V12,NATURALLY_ASPIRATED
+honda-ra273e-30-v12,honda,RA273E,Honda RA273E 3.0 V12,3.0,V12,NATURALLY_ASPIRATED
+ferrari-188-15-v6,ferrari,188,Ferrari 188 1.5 V6,1.5,V6,NATURALLY_ASPIRATED
+toyota-rvx-02-30-v10,toyota,RVX-02,Toyota RVX-02 3.0 V10,3.0,V10,NATURALLY_ASPIRATED
+honda-rbpt-rbpth001-16-v6-t-h,honda-rbpt,RBPTH001,Honda RBPTH001 1.6 V6 T H,1.6,V6,TURBOCHARGED_HYBRID
+mercedes-amg-f1-m13-16-v6-t-h,mercedes,AMG F1 M13,Mercedes-AMG F1 M13 1.6 V6 T H,1.6,V6,TURBOCHARGED_HYBRID
+ferrari-041-35-v12,ferrari,33,Ferrari 041 3.5 V12,3.5,V12,NATURALLY_ASPIRATED
+ferrari-625-25-l4,ferrari,625,Ferrari 625 2.5 L4,2.5,L6,NATURALLY_ASPIRATED
+renault-rs27-2012-24-v8,renault,RS27-2012,Renault RS27-2012 2.4 V8,2.4,V8,NATURALLY_ASPIRATED
+toyota-rvx-04-30-v10,toyota,RVX-04,Toyota RVX-04 3.0 V10,3.0,V10,NATURALLY_ASPIRATED
+ferrari-035-5-35-v12,ferrari,035/5,Ferrari 035/5 3.5 V12,3.5,V12,NATURALLY_ASPIRATED
+mecachrome-gc37-01-30-v10,mecachrome,GC37-01,Mecachrome GC37-01 3.0 V10,3.0,V10,NATURALLY_ASPIRATED
+ford-ed4-30-v8,ford,ED4,Ford ED4 3.0 V8,3.0,V8,NATURALLY_ASPIRATED
+pratt-whitney-stn76-tbn,pratt-whitney,STN76,Pratt & Whitney STN76 tbn,,,
+ferrari-ds50-25-v8,ferrari,DS50,Ferrari DS50 2.5 V8,2.5,V8,NATURALLY_ASPIRATED
+ferrari-062-16-v6-t-h,ferrari,50,Ferrari 062 1.6 V6 T H,1.6,V6,TURBOCHARGED_HYBRID
+ford-cosworth-sca-10-l4,ford,Cosworth SCA,Ford Cosworth SCA 1.0 L4,1.0,L4,NATURALLY_ASPIRATED
+ford-rs1-30-v10,ford,RS1,Ford RS1 3.0 V10,3.0,V10,NATURALLY_ASPIRATED
+renault-rs26-24-v8,renault,RS26,Renault RS26 2.4 V8,2.4,V8,NATURALLY_ASPIRATED
+ford-edm-30-v8,ford,EDM,Ford EDM 3.0 V8,3.0,V8,NATURALLY_ASPIRATED
+osca-4500-45-v12,osca,4500,OSCA 4500 4.5 V12,4.5,V12,NATURALLY_ASPIRATED
+toyota-rvx-07-24-v8,toyota,RVX-07,Toyota RVX-07 2.4 V8,2.4,V8,NATURALLY_ASPIRATED
+matra-ms9-30-v12,matra,MS9,Matra MS9 3.0 V12,3.0,V12,NATURALLY_ASPIRATED
+toro-rosso-16-v6-t-h,toro-rosso,Toro Rosso,Toro Rosso 1.6 V6 T H,1.6,V6,TURBOCHARGED_HYBRID
+repco-620-30-v8,repco,620,Repco 620 3.0 V8,3.0,V8,NATURALLY_ASPIRATED
+ford-hba4-35-v8,ford,HBA4,Ford HBA4 3.5 V8,3.5,V8,NATURALLY_ASPIRATED
+renault-e-tech-20b-16-v6-t-h,renault,E-Tech 20B,Renault E-Tech 20B 1.6 V6 T H,1.6,V6,TURBOCHARGED_HYBRID
+ford-ed-30-v8,ford,ED,Ford ED 3.0 V8,3.0,V8,NATURALLY_ASPIRATED
+ferrari-064-16-v6-t-h,ferrari,52,Ferrari 064 1.6 V6 T H,1.6,V6,TURBOCHARGED_HYBRID
+mercedes-fo-108x-24-v8,mercedes,FO 108X,Mercedes FO 108X 2.4 V8,2.4,V8,NATURALLY_ASPIRATED
+mugen-honda-mf-301he-30-v10,mugen-honda,MF-301HE,Mugen-Honda MF-301HE 3.0 V10,3.0,V10,NATURALLY_ASPIRATED
+matra-ms12-30-v12,matra,MS12,Matra MS12 3.0 V12,3.0,V12,NATURALLY_ASPIRATED
+bmw-p86-24-v8,bmw,P86,BMW P86 2.4 V8,2.4,V8,NATURALLY_ASPIRATED
+mercedes-fo-110e-30-v10,mercedes,FO 110E,Mercedes FO 110E 3.0 V10,3.0,V10,NATURALLY_ASPIRATED
+osca-372-15-l4,osca,372,OSCA 372 1.5 L4,1.5,L4,NATURALLY_ASPIRATED
+renault-rs4-35-v10,renault,RS4,Renault RS4 3.5 V10,3.5,V10,NATURALLY_ASPIRATED
+ferrari-375-45-v12,ferrari,375,Ferrari 375 4.5 V12,4.5,V12,NATURALLY_ASPIRATED
+maserati-250s-25-l4,maserati,250S,Maserati 250S 2.5 L4,2.5,L4,NATURALLY_ASPIRATED
+mercedes-fo-108s-24-v8,mercedes,FO 108S,Mercedes FO 108S 2.4 V8,2.4,V8,NATURALLY_ASPIRATED
+ferrari-242-30-v12,ferrari,242,Ferrari 242 3.0 V12,3.0,V12,NATURALLY_ASPIRATED
+talbot-lago-23cv-45-l6,talbot-lago,23CV,Talbot 23CV 4.5 L6,4.5,L6,NATURALLY_ASPIRATED
+megatron-m12-13-15-l4-t,megatron,M12/13,Megatron M12/13 1.5 L4 T,1.5,L4,TURBOCHARGED
+maserati-10-f1-30-v12,maserati,10/F1,Maserati 10/F1 3.0 V12,3.0,V12,NATURALLY_ASPIRATED
+ferrari-031-15-v6-t,ferrari,25,Ferrari 031 1.5 V6 T,1.5,V6,TURBOCHARGED
+honda-ra164e-15-v6-t,honda,RA164E,Honda RA164E 1.5 V6 T,1.5,V6,TURBOCHARGED
+bmw-m12-1-16-l4,bmw,M12/1,BMW M12/1 1.6 L4,1.6,L4,NATURALLY_ASPIRATED
+ford-cosworth-gba-15-v6-t,ford,Cosworth GBA,Ford Cosworth GBA 1.5 V6 T,1.5,V6,TURBOCHARGED
+ferrari-033e-15-v6-t,ferrari,033E,Ferrari 033E 1.5 V6 T,1.5,V6,TURBOCHARGED
+ford-hbe7-8-35-v8,ford,HBE7/8,Ford HBE7/8 3.5 V8,3.5,V8,NATURALLY_ASPIRATED
+ferrari-043-35-v12,ferrari,35,Ferrari 043 3.5 V12,3.5,V12,NATURALLY_ASPIRATED
+petronas-03a-30-v10,petronas,03A,Petronas 03A 3.0 V10,3.0,V10,NATURALLY_ASPIRATED
+matra-ms71-30-v12,matra,MS71,Matra MS71 3.0 V12,3.0,V12,NATURALLY_ASPIRATED
+peugeot-a20-30-v10,peugeot,A20,Peugeot A20 3.0 V10,3.0,V10,NATURALLY_ASPIRATED
+ferrari-555-25-l4,ferrari,555,Ferrari 555 2.5 L4,2.5,L4,NATURALLY_ASPIRATED
+mercedes-fo-108t-24-v8,mercedes,FO 108T,Mercedes FO 108T 2.4 V8,2.4,V8,NATURALLY_ASPIRATED
+brm-p142-30-v12,brm,P142,BRM P142 3.0 V12,3.0,V12,NATURALLY_ASPIRATED
+ferrari-205b-15-v8,ferrari,205B,Ferrari 205B 1.5 V8,1.5,V8,NATURALLY_ASPIRATED
+ferrari-052-30-v10,ferrari,42,Ferrari 052 3.0 V10,3.0,V10,NATURALLY_ASPIRATED
+osella-890t-15-v8-t,osella,890T,Osella 890T 1.5 V8 T,1.5,V8,TURBOCHARGED
+tecno-series-p-30-f12,tecno,Series-P,Tecno Series-P 3.0 F12,3.0,F12,NATURALLY_ASPIRATED
+brm-p75-30-h16,brm,P75,BRM P75 3.0 H16,3.0,H16,NATURALLY_ASPIRATED
+renault-rs27-2010-24-v8,renault,RS27-2010,Renault RS27-2010 2.4 V8,2.4,V8,NATURALLY_ASPIRATED
+honda-ra165e-15-v6-t,honda,RA165E,Honda RA165E 1.5 V6 T,1.5,V6,TURBOCHARGED
+ferrari-037-35-v12,ferrari,31,Ferrari 037 3.5 V12,3.5,V12,NATURALLY_ASPIRATED
+mercedes-fo-110p-30-v10,mercedes,FO 110P,Mercedes FO 110P 3.0 V10,3.0,V10,NATURALLY_ASPIRATED
+climax-fwb-15-l4,climax,FWB,Climax FWB 1.5 L4,1.5,L4,NATURALLY_ASPIRATED
+aston-martin-rb6-25-l6,aston-martin,RB6,Aston Martin RB6 2.5 L6,2.5,L6,NATURALLY_ASPIRATED
+climax-fpf-20-l4,climax,FPF,Climax FPF 2.0 L4,2.0,L4,NATURALLY_ASPIRATED
+cosworth-ca2011-24-v8,cosworth,CA2011,Cosworth CA2011 2.4 V8,2.4,V8,NATURALLY_ASPIRATED
+bmw-p86-8-24-v8,bmw,P86/8,BMW P86/8 2.4 V8,2.4,V8,NATURALLY_ASPIRATED
+alta-15-l4-s,alta,Alta,Alta 1.5 L4 S,1.5,L4,SUPERCHARGED
+bmw-p86-7-24-v8,bmw,P86/7,BMW P86/7 2.4 V8,2.4,V8,NATURALLY_ASPIRATED
+ford-edc-30-v8,ford,EDC,Ford EDC 3.0 V8,3.0,V8,NATURALLY_ASPIRATED
+alfa-romeo-giulietta-15-l4,alfa-romeo,Giulietta,Alfa Romeo Giulietta 1.5 L4,1.5,L4,NATURALLY_ASPIRATED
+maserati-4cl-15-l4-s,maserati,4CL,Maserati 4CL 1.5 L4 S,1.5,L4,SUPERCHARGED
+ferrari-554-25-l4,ferrari,554,Ferrari 554 2.5 L4,2.5,L4,NATURALLY_ASPIRATED
+ford-hbe7-35-v8,ford,HBE7,Ford HBE7 3.5 V8,3.5,V8,NATURALLY_ASPIRATED
+alfa-romeo-115-12-30-f12,alfa-romeo,115-12,Alfa Romeo 115-12 3.0 F12,3.0,F12,NATURALLY_ASPIRATED
+bmw-p80-30-v10,bmw,P80,BMW P80 3.0 V10,3.0,V10,NATURALLY_ASPIRATED

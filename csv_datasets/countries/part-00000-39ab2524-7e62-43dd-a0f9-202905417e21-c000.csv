@@ -1,0 +1,50 @@
+id,alpha2Code,alpha3Code,name,demonym,continentId
+uganda,UG,UGA,Uganda,Ugandan,africa
+palau,PW,PLW,Palau,Palauan,australia
+guernsey,GG,GGY,Guernsey,Sarnian,europe
+maldives,MV,MDV,Maldives,Maldivian,asia
+brazil,BR,BRA,Brazil,Brazilian,south-america
+moldova,MD,MDA,Moldova,Moldovan,europe
+turkey,TR,TUR,Turkey,Turkish,europe
+dominican-republic,DO,DOM,Dominican Republic,Dominican,north-america
+christmas-island,CX,CXR,Christmas Island,Christmas Islander,asia
+saudi-arabia,SA,SAU,Saudi Arabia,Saudi Arabian,asia
+luxembourg,LU,LUX,Luxembourg,Luxembourger,europe
+haiti,HT,HTI,Haiti,Haitian,north-america
+aruba,AW,ABW,Aruba,Arubian,north-america
+isle-of-man,IM,IMN,Isle of Man,Manx,europe
+taiwan,TW,TWN,Taiwan,Taiwanese,asia
+syria,SY,SYR,Syria,Syrian,asia
+jordan,JO,JOR,Jordan,Jordanian,asia
+armenia,AM,ARM,Armenia,Armenian,asia
+kenya,KE,KEN,Kenya,Kenyan,africa
+thailand,TH,THA,Thailand,Thai,asia
+tajikistan,TJ,TJK,Tajikistan,Tajikistani,asia
+china,CN,CHN,China,Chinese,asia
+gambia,GM,GMB,Gambia,Gambian,africa
+singapore,SG,SGP,Singapore,Singaporean,asia
+kazakhstan,KZ,KAZ,Kazakhstan,Kazakhstani,asia
+vatican-city,VA,VAT,Vatican City,Vatican,europe
+algeria,DZ,DZA,Algeria,Algerian,africa
+northern-mariana-islands,MP,MNP,Northern Mariana Islands,Northern Marianan,australia
+wallis-and-futuna,WF,WLF,Wallis and Futuna,Wallisian/Futunan,australia
+east-timor,TL,TLS,East Timor,East Timorese,asia
+bouvet-island,BV,BVT,Bouvet Island,,antarctica
+chad,TD,TCD,Chad,Chadian,africa
+grenada,GD,GRD,Grenada,Grenadian,north-america
+western-sahara,EH,ESH,Western Sahara,Western Saharan,africa
+yemen,YE,YEM,Yemen,Yemeni,asia
+russia,RU,RUS,Russia,Russian,europe
+bangladesh,BD,BGD,Bangladesh,Bangladeshi,asia
+pakistan,PK,PAK,Pakistan,Pakistani,asia
+belize,BZ,BLZ,Belize,Belizean,north-america
+reunion,RE,REU,Réunion,Réunionese,africa
+british-indian-ocean-territory,IO,IOT,British Indian Ocean Territory,,asia
+belgium,BE,BEL,Belgium,Belgian,europe
+jamaica,JM,JAM,Jamaica,Jamaican,north-america
+antigua-and-barbuda,AG,ATG,Antigua and Barbuda,Antiguan,north-america
+mayotte,YT,MYT,Mayotte,Mahoran,africa
+cuba,CU,CUB,Cuba,Cuban,north-america
+india,IN,IND,India,Indian,asia
+united-arab-emirates,AE,ARE,United Arab Emirates,Emirati,asia
+philippines,PH,PHL,Philippines,Filipino,asia

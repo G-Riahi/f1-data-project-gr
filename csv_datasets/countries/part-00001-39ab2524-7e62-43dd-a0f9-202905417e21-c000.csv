@@ -1,0 +1,50 @@
+id,alpha2Code,alpha3Code,name,demonym,continentId
+lebanon,LB,LBN,Lebanon,Lebanese,asia
+chile,CL,CHL,Chile,Chilean,south-america
+djibouti,DJ,DJI,Djibouti,Djiboutian,africa
+ivory-coast,CI,CIV,Ivory Coast,Ivorian,africa
+faroe-islands,FO,FRO,Faroe Islands,Faroese,europe
+venezuela,VE,VEN,Venezuela,Venezuelan,south-america
+saint-martin,MF,MAF,Saint Martin,,north-america
+british-virgin-islands,VG,VGB,British Virgin Islands,Virgin Islander,north-america
+costa-rica,CR,CRI,Costa Rica,Costa Rican,north-america
+lithuania,LT,LTU,Lithuania,Lithuanian,europe
+macau,MO,MAC,Macau,Macanese,asia
+israel,IL,ISR,Israel,Israeli,asia
+south-africa,ZA,ZAF,South Africa,South African,africa
+saint-vincent-and-the-grenadines,VC,VCT,Saint Vincent and the Grenadines,Saint Vincentian,north-america
+colombia,CO,COL,Colombia,Colombian,south-america
+cape-verde,CV,CPV,Cape Verde,Cape Verdean,africa
+burkina-faso,BF,BFA,Burkina Faso,Burkinabe,africa
+puerto-rico,PR,PRI,Puerto Rico,Puerto Rican,north-america
+ireland,IE,IRL,Ireland,Irish,europe
+eritrea,ER,ERI,Eritrea,Eritrean,africa
+malta,MT,MLT,Malta,Maltese,europe
+romania,RO,ROU,Romania,Romanian,europe
+united-states-of-america,US,USA,United States of America,American,north-america
+south-georgia-and-the-south-sandwich-islands,GS,SGS,South Georgia and the South Sandwich Islands,,antarctica
+iran,IR,IRN,Iran,Iranian,asia
+south-korea,KR,KOR,South Korea,South Korean,asia
+niger,NE,NER,Niger,Nigerian,africa
+curacao,CW,CUW,Curaçao,Curaçaoan,north-america
+sudan,SD,SDN,Sudan,Sudanese,africa
+gibraltar,GI,GIB,Gibraltar,Gibraltarian,europe
+andorra,AD,AND,Andorra,Andorran,europe
+comoros,KM,COM,Comoros,Comoran,africa
+oman,OM,OMN,Oman,Omani,asia
+guadeloupe,GP,GLP,Guadeloupe,Guadeloupean,north-america
+estonia,EE,EST,Estonia,Estonian,europe
+guinea,GN,GIN,Guinea,Guinean,africa
+french-polynesia,PF,PYF,French Polynesia,French Polynesian,australia
+morocco,MA,MAR,Morocco,Moroccan,africa
+mongolia,MN,MNG,Mongolia,Mongolian,asia
+brunei,BN,BRN,Brunei,Bruneian,asia
+cayman-islands,KY,CYM,Cayman Islands,Caymanian,north-america
+barbados,BB,BRB,Barbados,Barbadian,north-america
+niue,NU,NIU,Niue,Niueans,australia
+finland,FI,FIN,Finland,Finnish,europe
+seychelles,SC,SYC,Seychelles,Seychellois,africa
+mauritius,MU,MUS,Mauritius,Mauritian,africa
+heard-island-and-mcdonald-islands,HM,HMD,Heard Island and McDonald Islands,,antarctica
+somalia,SO,SOM,Somalia,Somali,africa
+hong-kong,HK,HKG,Hong Kong,Hongkongese,asia
