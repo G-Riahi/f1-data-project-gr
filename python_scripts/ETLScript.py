@@ -1,7 +1,6 @@
 from pyspark.sql import SparkSession, Row
 from pyspark.sql.types import StructType, StructField, StringType
 
-
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
@@ -11,6 +10,7 @@ from python_scripts.DriversToCSV import driversToSpark
 from python_scripts.CircuitsToCSV import circuitsToSpark
 from python_scripts.ConstructorsToCSV import constructorsToSpark
 
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 
 import json
@@ -24,11 +24,12 @@ import os
 #########################################################
 
 
-# Function to extract all keys from a dataset
-# Param:  folderName (string)    -> The name of the folder that stores yaml dataset
-# Output: keys (list of strings) -> A list of all keys in these datasets
+# Function to extract all keys and file names from a dataset
+# Param:  folderName (string)           -> The name of the folder that stores yaml dataset
+# Output: - keys (list of strings)      -> A list of all keys in these datasets
+#         - fileNames (list of strings) -> A list of all file names in the dataset
 
-def datasetKeys(folderName):
+'''def datasetKeys2(folderName):
     max_length = 0
     keys = []
     folder_path = os.path.join('/home/floppabox/f1/f1db/src/data', folderName)
@@ -40,28 +41,43 @@ def datasetKeys(folderName):
                 max_length = len(list(data.keys()))
                 keys = list(data.keys())
 
-    return keys
+    return keys'''
 
+
+def datasetKeys(folderName):
+    keysSeen = {}
+    folderPath = os.path.join('/home/floppabox/f1/f1db/src/data', folderName)
+
+    fileNames = [file for file in os.listdir(folderPath)]
+
+    for fileName in fileNames:
+        file_path = os.path.join(folderPath, fileName)
+        with open(file_path, 'r') as file:
+            data=yaml.safe_load(file)
+            for key in data.keys():
+                if key not in keysSeen:
+                    keysSeen[key]=None
+
+    return list(keysSeen.keys()), fileNames
 
 # Function to generate the dataset in the form of a list of dictionaries
 # Param:  folderName (string)         -> The name of the folder that stores yaml dataset
 # Output: data (list of dictionaries) -> The dataset
 
+def processFile(filePath, keys):
+    with open(filePath, 'r') as file:
+        content=yaml.safe_load(file)
+        record ={key: content[key] for key in keys}
+
+    return record
+
 def yamlConv(folderName):
-    keys = datasetKeys(folderName)
-    data = []
-    folder_path = os.path.join('/home/floppabox/f1/f1db/src/data', folderName)
-    for file_name in os.listdir(folder_path):
-        file_path = os.path.join(folder_path, file_name)
+    keys, fileNames = datasetKeys(folderName)
+    folderPath = os.path.join('/home/floppabox/f1/f1db/src/data', folderName)
+    filePaths = [os.path.join(folderPath, fileName) for fileName in fileNames]
 
-        with open(file_path, 'r') as file:
-            content_circuits=yaml.safe_load(file)
-            record ={}
-
-            for key in keys:
-                record[key]= content_circuits.get(key)
-
-            data.append(record)
+    with ThreadPoolExecutor() as executor:
+        data = list(executor.map(lambda filePath: processFile(filePath, keys), filePaths))
     
     return data
 
@@ -73,7 +89,8 @@ def yamlConv(folderName):
 def sparkDataset(folderName, appName='YAML to CSV'):
     spark = SparkSession.builder.appName(appName).getOrCreate()
 
-    dataset= spark.createDataFrame(yamlConv(folderName)).select(datasetKeys(folderName))
+    keys, _ = datasetKeys(folderName)
+    dataset= spark.createDataFrame(yamlConv(folderName)).select(keys)
 
     if not os.path.isdir('/home/floppabox/f1/f1-data-project-gr/csv_datasets'):
         print('creaing csv_datasets folder')
