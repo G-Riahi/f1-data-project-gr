@@ -26,15 +26,13 @@ def keys_list(folderPath):
                 if key not in keysSeen:
                     keysSeen[key]=None
 
-    return list(keysSeen.keys()), fileNames
+    return list(keysSeen.keys())
 
 # Extracting all drivers data
 
-def transformData(folderPath):
-
-    keys, filesNames = keys_list(folderPath)
+def transformData(folderPath, keys):
     drivers_data, drivers_relationships_data = [], []
-    filesPaths = [os.path.join(folderPath, fileName) for fileName in filesNames]
+    filesPaths = [os.path.join(folderPath, fileName) for fileName in os.listdir(folderPath)]
     id = 0
 
     for filePath in filesPaths:
@@ -57,7 +55,7 @@ def transformData(folderPath):
                     drivers_relationships_data.append(record_relation)
 
     
-    return drivers_data, drivers_relationships_data, keys
+    return drivers_data, drivers_relationships_data
 
 
 # Creating spark dataframes
@@ -65,25 +63,16 @@ def transformData(folderPath):
 def driversToSpark(folder_path="/home/floppabox/f1/f1db/src/data/drivers" , folder1='drivers', folder2='drivers_relationships', appName='YAML to CSV'):
 
     spark = SparkSession.builder.appName(appName).getOrCreate()
+    keys = keys_list(folder_path)
 
-    drivers_data, drivers_relationships_data, keys = transformData(folder_path)
+    drivers_data, drivers_relationships_data = transformData(folder_path, keys)
     drivers = spark.createDataFrame(drivers_data).select([x for x in keys if x != 'familyRelationships'])
     drivers_relationships = spark.createDataFrame(drivers_relationships_data).select(['id','driverId', 'relationId', 'type'])
 
     # Creating CSV files if the csv_datasets folder exists (or also creating the folder)
 
-    if not os.path.isdir('/home/floppabox/f1/f1-data-project-gr/csv_datasets'):
-        print('creaing csv_datasets folder')
-        os.makedirs('/home/floppabox/f1/f1-data-project-gr/csv_datasets')
+    outputPath = '/home/floppabox/f1/f1-data-project-gr/csv_datasets'
+    os.makedirs(outputPath, exist_ok=True)
 
-    print('-'*20)
-
-    if os.path.isdir(f'/home/floppabox/f1/f1-data-project-gr/csv_datasets/{folder1}') \
-        and os.path.isdir(f'/home/floppabox/f1/f1-data-project-gr/csv_datasets/{folder2}'):
-        print('updating the drivers and relationships csv files')
-        drivers.write.csv(os.path.join('/home/floppabox/f1/f1-data-project-gr/csv_datasets', folder1), header=True, mode='overwrite')
-        drivers_relationships.write.csv(os.path.join('/home/floppabox/f1/f1-data-project-gr/csv_datasets', folder2), header=True, mode='overwrite')
-    else:
-        print('creating the drivers and relationships csv files')
-        drivers.write.csv(os.path.join('/home/floppabox/f1/f1-data-project-gr/csv_datasets', folder1), header=True)
-        drivers_relationships.write.csv(os.path.join('/home/floppabox/f1/f1-data-project-gr/csv_datasets', folder2), header=True)
+    drivers.write.csv(os.path.join(outputPath, folder1), header=True, mode='overwrite')
+    drivers_relationships.write.csv(os.path.join(outputPath, folder2), header=True, mode='overwrite')
