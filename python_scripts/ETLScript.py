@@ -1,6 +1,5 @@
 from pyspark.sql import SparkSession, Row
 from pyspark.sql.types import StructType, StructField, StringType
-from pyspark.context import SparkContext
 
 from airflow import DAG
 from airflow.operators.python import PythonOperator
@@ -11,6 +10,7 @@ from python_scripts.DriversToCSV import driversToSpark
 from python_scripts.CircuitsToCSV import circuitsToSpark
 from python_scripts.ConstructorsToCSV import constructorsToSpark
 
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 
 import json
@@ -79,9 +79,9 @@ def yamlConv(folderName):
     folderPath = os.path.join('/home/floppabox/f1/f1db/src/data', folderName)
     filePaths = [os.path.join(folderPath, fileName) for fileName in fileNames]
 
-    rdd = spark.sparkContext.parallelize(filePaths)
-    data = rdd.map(lambda path: processFile(path, keys)).collect()
-
+    with ThreadPoolExecutor() as executor:
+        data = list(executor.map(lambda filePath: processFile(filePath, keys), filePaths))
+    
     return data
 
 
@@ -105,7 +105,7 @@ def sparkDataset(folderName):
         dataset.write.csv(outputDir, header=True, mode='overwrite')
     else:
         print(f'creating the {folderName}csv files')
-        dataset.write.csv((outputDir, folderName), header=True)
+        dataset.write.csv(outputDir, header=True)
 
 
 
