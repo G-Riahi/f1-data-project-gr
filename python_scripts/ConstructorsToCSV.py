@@ -12,53 +12,45 @@ import os
 
 # Getting all possible keys in the consructors data
 
-def keys_list(folder_path):
+def keys_list(folderPath):
+    fileNames = [file for file in os.listdir(folderPath)]
+    keysSeen = {}
 
-    max_length = 0
-    keys = []
-    for file_name in os.listdir(folder_path):
-        file_path = os.path.join(folder_path, file_name)
+    for fileName in fileNames:
+        file_path = os.path.join(folderPath, fileName)
         with open(file_path, 'r') as file:
             data=yaml.safe_load(file)
-            if max_length<=len(list(data.keys())):
-                max_length = len(list(data.keys()))
-                keys = list(data.keys())
+            for key in data.keys():
+                if key not in keysSeen:
+                    keysSeen[key]=None
 
-    return keys
+    return list(keysSeen.keys())
 
 
 # Preparing lists of dictionaries for the extraced constructors and rebranding data
 
-def transformData(folder_path):
-
-    keys = keys_list(folder_path)
+def transformData(folderPath, keys):
     constructors_data, rebrands_data = [], []
-
+    filesPaths = [os.path.join(folderPath, fileName) for fileName in os.listdir(folderPath)]
     id = 0
-    for file_name in os.listdir(folder_path):
-        file_path = os.path.join(folder_path, file_name)
 
-        with open(file_path, 'r') as file:
+    for filePath in os.listdir(filesPaths):
+        with open(filePath, 'r') as file:
             content_const=yaml.safe_load(file)
-            record = {}
+            record_constructor = {key: content_const[key] for key in keys if key != 'chronology'}
+            constructors_data.append(record_constructor)
 
-            for key in keys:
-                if key != 'chronology':
-                    record[key]= content_const.get(key)
-
-            constructors_data.append(record)
-
-            de = None
+            de = None # 'de' is "from" in french, since I can't use "from" as a variable
             if 'chronology' in content_const.keys() and any(rebrand.get('constructorIdTo') == content_const['id'] for rebrand in rebrands_data)==False:
                 for reb in content_const['chronology']:
-                    record = {}
-                    record['consructorIdFrom'] = de
-                    record['constructorIdTo'] = reb['constructorId']
+                    record_rebrand = {
+                        'consructorIdFrom' : de,
+                        'yearFrom' : reb['yearFrom'],
+                        'consructorIdTo' : reb['constructorId'],
+                        'yearTo' : reb['yearTo']
+                    }
                     de = reb['constructorId']
-                    record['yearFrom'] = reb['yearFrom']
-                    record['yearTo'] = reb['yearTo']
-                    rebrands_data.append(record)
-
+                    rebrands_data.append(record_rebrand)
 
     return constructors_data, rebrands_data
 
@@ -75,18 +67,8 @@ def constructorsToSpark(folder_path="/home/floppabox/f1/f1db/src/data/constructo
 
     # Creating CSV files if the csv_datasets folder exists (or also creating the folder)
 
-    if not os.path.isdir('/home/floppabox/f1/f1-data-project-gr/csv_datasets'):
-        print('creaing csv_datasets folder')
-        os.makedirs('/home/floppabox/f1/f1-data-project-gr/csv_datasets')
+    outputPath = '/home/floppabox/f1/f1-data-project-gr/csv_datasets'
+    os.makedirs(outputPath, exist_ok=True)
 
-    print('-'*20)
-
-    if os.path.isdir(f'/home/floppabox/f1/f1-data-project-gr/csv_datasets/{folder1}') \
-        and os.path.isdir(f'/home/floppabox/f1/f1-data-project-gr/csv_datasets/{folder2}'):
-        print('updating the constructors and rebrands csv files')
-        constructors.write.csv(os.path.join('/home/floppabox/f1/f1-data-project-gr/csv_datasets', folder1), header=True, mode='overwrite')
-        rebrands.write.csv(os.path.join('/home/floppabox/f1/f1-data-project-gr/csv_datasets', folder2), header=True, mode='overwrite')
-    else:
-        print('creating the constructors and rebrands csv files')
-        constructors.write.csv(os.path.join('/home/floppabox/f1/f1-data-project-gr/csv_datasets', folder1), header=True)
-        rebrands.write.csv(os.path.join('/home/floppabox/f1/f1-data-project-gr/csv_datasets', folder2), header=True)
+    constructors.write.csv(os.path.join(outputPath, folder1), header=True, mode='overwrite')
+    rebrands.write.csv(os.path.join(outputPath, folder2), header=True, mode='overwrite')

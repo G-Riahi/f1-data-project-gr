@@ -13,47 +13,44 @@ import os
 
 # Getting all possible keys in the circuits data
 
-def keys_list(folder_path):
-    max_length = 0
-    keys = []
-    for file_name in os.listdir(folder_path):
-        file_path = os.path.join(folder_path, file_name)
+def keys_list(folderPath):
+    fileNames = [file for file in os.listdir(folderPath)]
+    keysSeen = {}
+
+    for fileName in fileNames:
+        file_path = os.path.join(folderPath, fileName)
         with open(file_path, 'r') as file:
             data=yaml.safe_load(file)
-            if max_length<=len(list(data.keys())):
-                max_length = len(list(data.keys()))
-                keys = list(data.keys())    
-    return keys
+            for key in data.keys():
+                if key not in keysSeen:
+                    keysSeen[key]=None
+
+    return list(keysSeen.keys())
 
 
 # Preparing lists of dictionaries for the extraced circuits and previous names data
 
-def transform_data(folder_path):
-
+def transform_data(folderPath, keys):
     circuits_data, previous_names_data = [], []
-    keys = keys_list(folder_path)
+    filesPaths = [os.path.join(folderPath, fileName) for fileName in os.listdir(folderPath)]
     id = 0
-    for file_name in os.listdir(folder_path):
-        file_path = os.path.join(folder_path, file_name)
 
-        with open(file_path, 'r') as file:
+    for filePath in os.listdir(filesPaths):
+        with open(filePath, 'r') as file:
             content_circuits=yaml.safe_load(file)
-            record ={}
+            record_circuit = {key: content_circuits[key] for key in keys if key != 'previousNames'}
 
-            for key in keys:
-                if key != 'previousNames':
-                    record[key]= content_circuits.get(key)
-
-            circuits_data.append(record)
+            circuits_data.append(record_circuit)
         
             if isinstance(content_circuits['previousNames'], list):
                 for name in content_circuits['previousNames']:
-                    record ={}
-                    record['id']=id
-                    id=id+1
-                    record['circuitId']=content_circuits['id']
-                    record['previousName']=name
-                    previous_names_data.append(record)
+                    record_names = {
+                        'id' : id,
+                        'circuitId' : content_circuits['id'],
+                        'previousName' : name
+                    }
+                    id += 1
+                    previous_names_data.append(record_names)
 
     return circuits_data, previous_names_data
 
@@ -68,18 +65,10 @@ def circuitsToSpark(folder_path="/home/floppabox/f1/f1db/src/data/circuits" , fo
     circuits = spark.createDataFrame(circuits_data).select([x for x in keys if x != 'previousNames'])
     previous_circuit_names = spark.createDataFrame(previous_names_data).select(['id','circuitId', 'previousName'])
 
-    if not os.path.isdir('/home/floppabox/f1/f1-data-project-gr/csv_datasets'):
-        print('creaing csv_datasets folder')
-        os.makedirs('/home/floppabox/f1/f1-data-project-gr/csv_datasets')
+    # Creating CSV files if the csv_datasets folder exists (or also creating the folder)
 
-    print('-'*20)
+    outputPath = '/home/floppabox/f1/f1-data-project-gr/csv_datasets'
+    os.makedirs(outputPath, exist_ok=True)
 
-    if os.path.isdir(f'/home/floppabox/f1/f1-data-project-gr/csv_datasets/{folder1}') \
-        and os.path.isdir(f'/home/floppabox/f1/f1-data-project-gr/csv_datasets/{folder2}'):
-        print('updating the drivers and relationships csv files')
-        circuits.write.csv(os.path.join('/home/floppabox/f1/f1-data-project-gr/csv_datasets', folder1), header=True, mode='overwrite')
-        previous_circuit_names.write.csv(os.path.join('/home/floppabox/f1/f1-data-project-gr/csv_datasets', folder2), header=True, mode='overwrite')
-    else:
-        print('creating the drivers and relationships csv files')
-        circuits.write.csv(os.path.join('/home/floppabox/f1/f1-data-project-gr/csv_datasets', folder1), header=True)
-        previous_circuit_names.write.csv(os.path.join('/home/floppabox/f1/f1-data-project-gr/csv_datasets', folder2), header=True)
+    circuits.write.csv(os.path.join(outputPath, folder1), header=True, mode='overwrite')
+    previous_circuit_names.write.csv(os.path.join(outputPath, folder2), header=True, mode='overwrite')
