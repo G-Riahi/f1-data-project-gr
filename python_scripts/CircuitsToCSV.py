@@ -35,7 +35,7 @@ def transform_data(folderPath, keys):
     filesPaths = [os.path.join(folderPath, fileName) for fileName in os.listdir(folderPath)]
     id = 0
 
-    for filePath in os.listdir(filesPaths):
+    for filePath in filesPaths:
         with open(filePath, 'r') as file:
             content_circuits=yaml.safe_load(file)
             record_circuit = {key: content_circuits[key] for key in keys if key != 'previousNames'}
@@ -59,8 +59,9 @@ def transform_data(folderPath, keys):
 
 def circuitsToSpark(folder_path="/home/floppabox/f1/f1db/src/data/circuits" , folder1='circuits', folder2='previous_circuits_names', appName='YAML to CSV'):
 
-    circuits_data, previous_names_data = transform_data(folder_path)
     keys = keys_list(folder_path)
+    circuits_data, previous_names_data = transform_data(folder_path, keys)
+    
     spark = SparkSession.builder.appName(appName).getOrCreate()
     circuits = spark.createDataFrame(circuits_data).select([x for x in keys if x != 'previousNames'])
     previous_circuit_names = spark.createDataFrame(previous_names_data).select(['id','circuitId', 'previousName'])

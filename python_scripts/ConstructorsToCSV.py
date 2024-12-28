@@ -34,7 +34,7 @@ def transformData(folderPath, keys):
     filesPaths = [os.path.join(folderPath, fileName) for fileName in os.listdir(folderPath)]
     id = 0
 
-    for filePath in os.listdir(filesPaths):
+    for filePath in filesPaths:
         with open(filePath, 'r') as file:
             content_const=yaml.safe_load(file)
             record_constructor = {key: content_const[key] for key in keys if key != 'chronology'}
@@ -46,7 +46,7 @@ def transformData(folderPath, keys):
                     record_rebrand = {
                         'consructorIdFrom' : de,
                         'yearFrom' : reb['yearFrom'],
-                        'consructorIdTo' : reb['constructorId'],
+                        'constructorIdTo' : reb['constructorId'],
                         'yearTo' : reb['yearTo']
                     }
                     de = reb['constructorId']
@@ -59,9 +59,9 @@ def transformData(folderPath, keys):
 
 def constructorsToSpark(folder_path="/home/floppabox/f1/f1db/src/data/constructors" , folder1='constructors', folder2='rebranding_history', appName='YAML to CSV'):
     spark = SparkSession.builder.appName(appName).getOrCreate()
-
-    constructors_data, rebrands_data = transformData(folder_path)
     keys = keys_list(folder_path)
+    constructors_data, rebrands_data = transformData(folder_path, keys)
+    
     constructors = spark.createDataFrame(constructors_data).select([x for x in keys if x != 'chronology'])
     rebrands = spark.createDataFrame(rebrands_data).select(['consructorIdFrom','constructorIdTo', 'yearFrom', 'yearTo'])
 

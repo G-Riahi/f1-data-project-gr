@@ -9,6 +9,7 @@ from airflow.utils.task_group import TaskGroup
 from python_scripts.DriversToCSV import driversToSpark
 from python_scripts.CircuitsToCSV import circuitsToSpark
 from python_scripts.ConstructorsToCSV import constructorsToSpark
+from python_scripts.SeasonEntrantsToCSV import entrantsDriversToSpark
 
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
@@ -191,5 +192,9 @@ with DAG('transformationDAG', schedule_interval=None, start_date=datetime(2024,1
 
         [transformData, normData]
 
+    drivers_per_entrant = PythonOperator(
+        task_id = "drivers_per_entrant",
+        python_callable= entrantsDriversToSpark,
+    )
 
-    clone_update_dataset >> YAMLtoCSV
+    clone_update_dataset >> YAMLtoCSV >> drivers_per_entrant
