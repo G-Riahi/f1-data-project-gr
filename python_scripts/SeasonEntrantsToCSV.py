@@ -23,9 +23,9 @@ def extractInfo(year, dataYaml, entrant):
 def collectDriverInfo(year, entrant, constructor, dataYaml):
     data = {
             'year': int(year),
-            'entrant' : entrant,
-            'constructor' : constructor,
-            'driver' : dataYaml['driverId'],
+            'entrantId' : entrant,
+            'constructorId' : constructor,
+            'driverId' : dataYaml['driverId'],
             'tookPart': False if dataYaml['rounds'] == None else True,
             'TestDriver' : dataYaml.get('testDriver', False)
         }
@@ -57,7 +57,7 @@ def entrantsDriversToSpark(folder='driversAllYears', appName='YAML to CSV'):
 
     circuits_data= getAllDrivers()
     spark = SparkSession.builder.appName(appName).getOrCreate()
-    drivers = spark.createDataFrame(circuits_data).select(['year', 'entrant', 'constructor', 'driver', 'tookPart', 'TestDriver'])
+    drivers = spark.createDataFrame(circuits_data).select(['year', 'entrantId', 'constructorId', 'driverID', 'tookPart', 'testDriver'])
 
     # Creating CSV files if the csv_datasets folder exists (or also creating the folder)
     outputPath = '/home/floppabox/f1/f1-data-project-gr/csv_datasets'
