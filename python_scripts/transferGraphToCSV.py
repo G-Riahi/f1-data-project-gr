@@ -4,11 +4,9 @@ from pyspark.sql import SparkSession, Row
 from pyspark.sql.types import StructType, StructField, StringType
 from pyspark.sql.types import StringType, StructType, StructField, IntegerType, BooleanType
 
-spark = SparkSession.builder.appName("YAML to CSV").getOrCreate()
+#spark = SparkSession.builder.appName("YAML to CSV").getOrCreate()
 
-def extractTransferData(sparksession = "YAML to CSV"):
-
-    spark = SparkSession.builder.appName(sparksession).getOrCreate()
+def extractTransferData(spark: SparkSession):
 
     schema = StructType([
         StructField("year", IntegerType(), True),
@@ -36,7 +34,7 @@ def extractTransferData(sparksession = "YAML to CSV"):
                             INNER JOIN global_temp.debut db
                             ON db.debut_year == dr.year AND db.driverId == dr.driverId""")
     
-    #returement dataset (not acurate enough)
+    #retirement dataset (not acurate enough)
     
     spark.sql("""SELECT *
                 FROM (
@@ -122,3 +120,21 @@ def extractTransferData(sparksession = "YAML to CSV"):
     """)
 
     return debutDB, retirementDB, transferDB, breakDB
+
+def saveToCSV(spark: SparkSession):
+    debutDB, retirementDB, transferDB, breakDB = extractTransferData(spark)
+    
+    debuts = spark.createDataFrame(debutDB).select(['driverId', 'constructorId', 'debut_year'])
+    retirements = spark.createDataFrame(retirementDB).select(['driverId', 'constructorId', 'retirement_year'])
+    transfers = spark.createDataFrame(transferDB).select(['driverId', 'const_out', 'transfer_out', 'const_in', 'transfer_in'])
+    breaks = spark.createDataFrame(transferDB).select(['driverId', 'const_out', 'break_year', 'const_in', 'return_year'])
+
+    # Creating CSV files if the csv_datasets folder exists (or also creating the folder)
+
+    outputPath = '/home/floppabox/f1/f1-data-project-gr/csv_datasets/transferGraph'
+    os.makedirs(outputPath, exist_ok=True)
+
+    debuts.write.csv(os.path.join(outputPath, 'debuts'), header=True, mode='overwrite')
+    retirements.write.csv(os.path.join(outputPath, 'retirements'), header=True, mode='overwrite')
+    transfers.write.csv(os.path.join(outputPath, 'transfers'), header=True, mode='overwrite')
+    breaks.write.csv(os.path.join(outputPath, 'breaks'), header=True, mode='overwrite')
